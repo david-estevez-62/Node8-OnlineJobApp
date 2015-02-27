@@ -13,10 +13,7 @@ var indexController = {
 			res.render('index', {
 				applicants: results
 			});
-		});
-
-
-		
+		});	
 	}
 };
 

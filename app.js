@@ -15,18 +15,21 @@ app.set('views', __dirname + '/views');
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser());
 
-app.get('/', function(req, res) {
-	res.render('index');
+app.get('/', indexController.index);
+
+app.post('/addedApplicant', function(req, res){
+	res.render('applicant', req.body)
 });
 
 // // displays a list of applicants
-app.get('/applicant', function(req, res){
-	res.render('applicant')
-});
+// app.get('/applicant', function(req, res){
+// 	res.render('applicant')
+// });
 
-app.post('/submitapplication', function(req, res){
-	res.render('applicant', req.body)
-});
+
+
+
+
 
 // // creates and applicant
 // app.post('/addApplicant', function(req, res){
